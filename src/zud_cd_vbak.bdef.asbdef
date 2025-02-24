@@ -1,0 +1,59 @@
+managed implementation in class zbp_ud_cd_vbak unique;
+strict ( 2 );
+
+define behavior for Zud_cd_vbak //alias <alias_name>
+persistent table zud_vbak
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( mandatory : create ) Vbeln;
+  field ( readonly : update) Vbeln;
+
+  association _vbap { create; }
+
+  mapping for zud_vbak
+  {
+
+    Vbeln = vbeln;
+    Erdat = erdat;
+    Ernam = ernam;
+    Audat = audat;
+    Vbtyp = vbtyp;
+    Auart = auart;
+    Vkorg = vkorg;
+    Netwr = netwr;
+    CurrencyCode = currency_code;
+  }
+}
+
+define behavior for ZUD_CD_VBAP //alias <alias_name>
+persistent table zud_vbap
+lock dependent by _vbak
+authorization dependent by _vbak
+//etag master <field_name>
+{
+
+  update;
+  delete;
+  field ( readonly ) Vbeln;
+  field ( readonly : update) Posnr;
+
+  association _vbak;
+
+   mapping for zud_vbap
+  {
+
+    Vbeln = vbeln;
+    Posnr = posnr;
+    Vkorg =vkorg;
+    Matnr = matnr;
+    Arktx = arktx;
+
+
+
+  }
+}

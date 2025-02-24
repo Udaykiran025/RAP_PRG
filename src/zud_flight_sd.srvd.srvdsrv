@@ -1,0 +1,5 @@
+@EndUserText.label: 'Flight service'
+define service ZUD_flight_SD {
+  expose ZI_Conncection;
+  expose ZI_FLIGHT_UD;
+}

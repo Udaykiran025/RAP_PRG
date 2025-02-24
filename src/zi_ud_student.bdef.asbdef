@@ -1,0 +1,30 @@
+managed implementation in class zbp_i_ud_student unique;
+strict ;
+
+
+define behavior for ZI_UD_STUDENT //alias <alias_name>
+persistent table zud_student
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  //field (  mandatory : create ) StudentId;
+
+  field (  readonly : update ) StudentId;
+
+
+  mapping for zud_student
+  {
+
+      StudentId = student_id;
+      StudentName = student_name;
+      Age = age;
+      Class = class;
+      ClassSection = class_section;
+      AvgMarks = avg_marks;
+  }
+}

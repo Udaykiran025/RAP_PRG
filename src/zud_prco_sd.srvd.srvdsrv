@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for project view'
+define service ZUD_PRCO_SD {
+  expose ZUD_PR_CO;
+  expose ZUD_PR_SC;
+}

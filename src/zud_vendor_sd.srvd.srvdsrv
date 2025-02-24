@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for Vendor'
+define service ZUD_VENDOR_SD {
+  expose ZUD_VENDOR_CDS as VENDOR_DATA;
+}

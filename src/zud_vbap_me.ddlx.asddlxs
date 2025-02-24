@@ -1,0 +1,41 @@
+@Metadata.layer: #CORE
+
+
+@UI: {
+    headerInfo: {
+        typeName: 'Item',
+        typeNamePlural: 'Itema Details',
+        title: {  type: #STANDARD, value: 'Vbeln'  } },
+    presentationVariant: [{ sortOrder: [{ by: 'Vbeln', direction:
+    #ASC }] }]
+
+}
+@Search.searchable: true
+annotate view ZUD_PR_VBAP with
+{
+
+  @UI.facet: [{ id: 'Vbap',
+                  purpose: #STANDARD,
+                  type: #IDENTIFICATION_REFERENCE,
+                  position: 10,
+                  label: 'Sales Item Details'}]
+  @UI.identification: [{ position: 10, label: 'Sales Document' }]
+  @UI.lineItem: [{ position: 10, label: 'Sales Document' }]
+  @Search.defaultSearchElement: true
+  Vbeln;
+  @UI.identification: [{ position: 20, label: 'Sales Document Item' }]
+  @UI.lineItem: [{ position: 20, label: 'Sales Document Item' }]
+  @Search.defaultSearchElement: true
+  Posnr;
+  @UI.identification: [{ position: 30, label: 'Sales Organization' }]
+  @UI.lineItem: [{ position: 30, label: 'Sales Organization' }]
+  Vkorg;
+  @UI.identification: [{ position: 40, label: 'Material Number' }]
+  @UI.lineItem: [{ position: 40, label: 'Material Number' }]
+  Matnr;
+  @UI.identification: [{ position: 50, label: 'Short text for sales order item' }]
+  @UI.lineItem: [{ position: 50, label: 'Short text for sales order item' }]
+  Arktx;
+
+
+}

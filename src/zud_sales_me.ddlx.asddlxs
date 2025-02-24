@@ -1,0 +1,86 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeName: 'Header',
+        typeNamePlural: 'Header Details',
+        title: {  type: #STANDARD, value: 'Vbeln'  } },
+    presentationVariant: [{ sortOrder: [{ by: 'Vbeln', direction:
+    #ASC }] }]
+
+}
+@Search.searchable: true
+annotate view ZUD_PR_VBAK with
+{
+
+  @UI.facet: [{ id: 'Vbak',
+                    purpose: #STANDARD,
+                    type: #IDENTIFICATION_REFERENCE,
+                    position: 10,
+                    label: 'Sales Header Details'},
+                         { id: 'Vbap',
+                         purpose: #STANDARD,
+                         type: #LINEITEM_REFERENCE,
+                         position: 20,
+                         label: 'Sales Item Details',
+                         targetElement: '_vbap'
+                        }
+                       ]
+  @EndUserText.label: 'Sales Document'
+  @UI.lineItem: [{ position: 10 , label: 'Sales Document'}]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.identification: [{ position: 10, label: 'Sales Document' }]
+  @Consumption.valueHelpDefinition: [{ entity: {
+        name: 'ZUD_CD_VBAK',
+        element: 'Vbeln'
+    } }]
+  @Search.defaultSearchElement: true
+  Vbeln;
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20  }]
+  @EndUserText.label: ' Creation Date'
+  @UI.lineItem: [{ position: 20, label: ' Creation Date' }]
+
+  Erdat;
+  @UI.identification: [{ position: 30, label: 'Created By' }]
+  @UI.lineItem: [{ position: 30 , label: 'Created By'}]
+
+  Ernam;
+  @UI.identification: [{ position: 40, label: 'Document Date' }]
+  @UI.lineItem: [{ position: 40 , label: 'Document Date'}]
+
+  Audat;
+  @UI.identification: [{ position: 50, label: 'SD Document Category' }]
+  @UI.lineItem: [{ position: 50 , label: 'SD Document Category'}]
+  @Consumption.valueHelpDefinition: [{ entity: {
+       name: 'ZUD_CD_VBAK',
+       element: 'Vbtyp'
+   } }]
+  @Search.defaultSearchElement: true
+  Vbtyp;
+  @UI.lineItem: [{ position: 60, label: 'Sales Document Type' }]
+  @UI.identification: [{ position: 40, label: 'Sales Document Type' }]
+
+  @Consumption.valueHelpDefinition: [{ entity: {
+        name: 'ZUD_CD_VBAK',
+        element: 'Auart'
+    } }]
+  Auart;
+  @UI.lineItem: [{ position: 70, label: 'Sales Organization' }]
+  @UI.identification: [{ position: 40, label: 'Sales Organization' }]
+  @Consumption.valueHelpDefinition: [{ entity: {
+       name: 'ZUD_CD_VBAK',
+       element: 'Vkorg'
+   } }]
+  Vkorg;
+  @UI.lineItem: [{ position: 80, label: 'Net Value' }]
+  @UI.identification: [{ position: 40, label: 'Net Value' }]
+  Netwr;
+  // CurrencyCode;
+
+
+  /* Associations */
+
+
+
+}

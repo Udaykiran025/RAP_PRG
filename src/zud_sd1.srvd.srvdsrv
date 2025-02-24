@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition'
+define service ZUD_SD1 {
+  expose I_Currency;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defiition for display'
+define service ZUD_CO_SD {
+  expose ZUD_ROOT_CO;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'sales service definition'
+define service ZUD_SD_SALES {
+  expose ZUD_PR_VBAK;
+  expose ZUD_PR_VBAP;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for VBAK'
+define service ZUD_SD_VBAK {
+  expose Zud_cd_vbak;
+  expose ZUD_CD_VBAP;
+}
